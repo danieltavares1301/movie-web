@@ -1,5 +1,5 @@
 import React from "react";
 
-const App = () => <div>Movie</div>;
+const App = () => <div>Moviee</div>;
 
 export default App;
