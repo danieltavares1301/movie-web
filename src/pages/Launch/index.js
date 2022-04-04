@@ -1,7 +1,7 @@
 import React from "react";
 
 const Launch = () => {
-  <div>Launch</div>;
+  return <div>Launch</div>;
 };
 
 export default Launch;
