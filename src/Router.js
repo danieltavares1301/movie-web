@@ -8,16 +8,16 @@ import Layout from "./components/Layout";
 
 const Router = () => {
   return (
-    <Layout>
     <BrowserRouter>
+      <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Session" element={<Session />} />
         <Route path="/User" element={<User />} />
         <Route path="/Ticket" element={<Ticket />} />
       </Routes>
+      </Layout>
     </BrowserRouter>
-    </Layout>
 
   );
 };

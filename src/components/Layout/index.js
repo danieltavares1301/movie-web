@@ -1,10 +1,12 @@
 import React from "react";
-import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Header from "../Header";
 
 
 const Layout = ({ children }) =>
-    <Container fixed style={{ backgroundColor: '#F0F0F0', minHeight: '100vh', maxHeight: "100%" }}>
+    <Box style={{ backgroundColor: '#F0F0F0', minHeight: '100vh', maxHeight: "100%", minWidth: "100%" }}>
+        <Header />
         {children}
-    </Container>
+    </Box>
 
 export default Layout
