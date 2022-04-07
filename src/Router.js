@@ -4,9 +4,11 @@ import Home from "./pages/Home";
 import Session from "./pages/Session";
 import User from "./pages/User";
 import Ticket from "./pages/Ticket";
+import Layout from "./components/Layout";
 
 const Router = () => {
   return (
+    <Layout>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,6 +17,8 @@ const Router = () => {
         <Route path="/Ticket" element={<Ticket />} />
       </Routes>
     </BrowserRouter>
+    </Layout>
+
   );
 };
 
