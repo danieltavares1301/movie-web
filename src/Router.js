@@ -15,6 +15,7 @@ const Router = () => {
           <Route path="/Session" element={<Session />} />
           <Route path="/User" element={<User />} />
           <Route path="/Ticket" element={<Ticket />} />
+          <Route path="*" element={<h1>Not Found!</h1>} />
         </Route>
       </Routes>
     </BrowserRouter>
