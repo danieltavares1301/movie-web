@@ -9,16 +9,14 @@ import Home from "./pages/Home";
 const Router = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route element={<Home />} index />
-            <Route path="/Session" element={<Session />} />
-            <Route path="/User" element={<User />} />
-            <Route path="/Ticket" element={<Ticket />} />
-          </Route>
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route element={<Home />} index />
+          <Route path="/Session" element={<Session />} />
+          <Route path="/User" element={<User />} />
+          <Route path="/Ticket" element={<Ticket />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 };
