@@ -6,7 +6,15 @@ import Header from "../Header";
 import PermanentDrawerLeft from "../Drawer";
 
 const Layout = () => (
-  <Box sx={{ display: "flex" }}>
+  <Box
+    sx={{ display: "flex" }}
+    style={{
+      backgroundColor: "#F0F0F0",
+      minHeight: "100vh",
+      maxHeight: "100%",
+      minWidth: "100%",
+    }}
+  >
     <Header />
     <PermanentDrawerLeft />
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
