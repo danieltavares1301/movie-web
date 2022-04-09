@@ -21,6 +21,8 @@ const Header = () => {
     <Box sx={{ flexGrow: 1 }} style={{ width: "100%" }}>
       <AppBar position="static">
         <Toolbar>
+          <h3>Movie</h3>
+          {/*
           <IconButton
             size="large"
             edge="start"
@@ -30,7 +32,7 @@ const Header = () => {
             onClick={handleClickOpen}
           >
             <MenuIcon />
-          </IconButton>
+  </IconButton>*/}
         </Toolbar>
       </AppBar>
     </Box>
