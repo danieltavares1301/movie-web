@@ -1,9 +1,13 @@
 import React from "react";
+import PermanentDrawerLeft from "../../components/Drawer";
 
 const Home = () => {
   return (
     <div>
-      <div>Home</div><div>Home</div><div>Home</div>
+      <PermanentDrawerLeft />
+      <div>Home</div>
+      <div>Home</div>
+      <div>Home</div>
     </div>
   );
 };
