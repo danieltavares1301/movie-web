@@ -1,10 +1,11 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { Button, Box } from "@mui/material";
 
 export default function DenseTable() {
   const users = [
@@ -18,6 +19,15 @@ export default function DenseTable() {
       phone: "888888888",
     },
   ];
+
+  const onRemove = (id) => {
+    console.log(id);
+  };
+
+  const onEdit = (id) => {
+    console.log(id);
+  };
+
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} size="small">
@@ -30,6 +40,7 @@ export default function DenseTable() {
             <TableCell align="right">email</TableCell>
             <TableCell align="right">birthdate</TableCell>
             <TableCell align="right">phone</TableCell>
+            <TableCell align="right">actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -45,6 +56,16 @@ export default function DenseTable() {
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.birthdate}</TableCell>
               <TableCell align="right">{user.phone}</TableCell>
+              <TableCell align="right">
+                <Box>
+                  <Button variant="contained" onClick={() => onEdit(user.id)}>
+                    edit
+                  </Button>
+                  <Button variant="contained" onClick={() => onRemove(user.id)}>
+                    remove
+                  </Button>
+                </Box>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
