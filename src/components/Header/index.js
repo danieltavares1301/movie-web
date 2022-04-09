@@ -9,33 +9,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { SwipeableDrawer, Drawer } from "@mui/material";
 
 const Header = () => {
-  const [open, setOpen] = useState(true);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
-    <Box sx={{ flexGrow: 1 }} style={{ width: "100%" }}>
-      <AppBar position="static">
-        <Toolbar>
-          <h3>Movie</h3>
-          {/*
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={handleClickOpen}
-          >
-            <MenuIcon />
-  </IconButton>*/}
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar
+      position="fixed"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    >
+      <Toolbar>
+        <Typography variant="h6" noWrap component="div">
+          Movie
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 

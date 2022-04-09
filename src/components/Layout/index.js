@@ -1,19 +1,18 @@
-import React from "react";
+import * as React from "react";
 import Box from "@mui/material/Box";
-import Header from "../Header";
+import Toolbar from "@mui/material/Toolbar";
 import { Outlet } from "react-router-dom";
+import Header from "../Header";
+import PermanentDrawerLeft from "../Drawer";
 
 const Layout = () => (
-  <Box
-    style={{
-      backgroundColor: "#F0F0F0",
-      minHeight: "100vh",
-      maxHeight: "100%",
-      minWidth: "100%",
-    }}
-  >
+  <Box sx={{ display: "flex" }}>
     <Header />
-    <Outlet />
+    <PermanentDrawerLeft />
+    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Toolbar />
+      <Outlet />
+    </Box>
   </Box>
 );
 
