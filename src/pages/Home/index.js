@@ -1,8 +1,7 @@
 import React from "react";
-import DenseTable from "../../components/Table";
 
 const Home = () => {
-  return <DenseTable />;
+  return <h1>home</h1>;
 };
 
 export default Home;

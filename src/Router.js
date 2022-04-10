@@ -1,20 +1,24 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Session from "./pages/Session";
-import User from "./pages/User";
-import Ticket from "./pages/Ticket";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Sessions from "./pages/Session";
+import Users from "./pages/User";
+import Tickets from "./pages/Ticket";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import Homes from "./pages/Home";
+import User from "./pages/User/User";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route element={<Home />} index />
-          <Route path="/Session" element={<Session />} />
-          <Route path="/User" element={<User />} />
-          <Route path="/Ticket" element={<Ticket />} />
+          <Route element={<Homes />} index />
+          <Route path="/User" element={<Outlet />}>
+            <Route element={<Users />} index />
+            <Route path=":userId" element={<User />} />
+          </Route>
+          <Route path="/Session" element={<Sessions />} />
+          <Route path="/Ticket" element={<Tickets />} />
           <Route path="*" element={<h1>Not Found!</h1>} />
         </Route>
       </Routes>
