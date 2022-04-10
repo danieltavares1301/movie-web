@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,22 +6,28 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { Button, Box } from "@mui/material";
+import api from "../../services/api";
 
 export default function DenseTable() {
-  const users = [
-    {
-      id: 1,
-      name: "daniel",
-      role: "role",
-      country: "Brasil",
-      email: "daniel@gmai.com",
-      birthdate: "13 jan 2001",
-      phone: "888888888",
-    },
-  ];
+  const [users, setUsers] = useState([]);
 
-  const onRemove = (id) => {
-    console.log(id);
+  useEffect(() => {
+    api
+      .get("/user")
+      .then((response) => setUsers(response.data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  const onRemove = async (id) => {
+    try {
+      await api.delete(`/user/${id}`);
+
+      //setUsers(users.filter((user) => user.id !== id));
+
+      console.log(`${id} apagado!`);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const onEdit = (id) => {
